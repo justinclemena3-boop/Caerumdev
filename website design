@@ -1,0 +1,51 @@
+# inside /workspaces/Caerumdev
+git init
+git add .
+git commit -m "Initial site: CaerumDev static website"
+git branch -M main
+# will create repo, add remote origin, and push current branch
+gh repo create YOUR_USERNAME/Caerumdev --public --source=. --remote=origin --push
+
+git remote add origin https://github.com/YOUR_USERNAME/Caerumdev.git
+git push -u origin main
+git remote add origin https://github.com/YOUR_USERNAME/Caerumdev.git
+git push -u origin main
+# from repo root
+rm -rf docs
+cp -r src docs
+git add docs
+git commit -m "Add docs for GitHub Pages"
+git push
+# be careful: this moves files
+git mv src/* .
+git rm -r src
+git commit -m "Move site files to repository root"
+git push
+# be careful: this moves files
+git mv src/* .
+git rm -r src
+git commit -m "Move site files to repository root"
+git push
+<form name="contact" method="POST" data-netlify="true">
+  ...
+</form>
+<form action="https://formspree.io/f/<your-id>" method="POST">
+  <input name="name" ...>
+  <input name="email" ...>
+  <textarea name="message"></textarea>
+  <button type="submit">Send</button>
+</form>
+# from /workspaces/Caerumdev
+git init
+git add .
+git commit -m "Initial site"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/Caerumdev.git
+git push -u origin main
+
+# copy for GitHub Pages
+rm -rf docs
+cp -r src docs
+git add docs
+git commit -m "Add docs folder for GitHub Pages"
+git push
